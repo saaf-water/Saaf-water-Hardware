@@ -1,4 +1,4 @@
-# Saaf-water-Hardware
+# Saaf water Hardware
 
 Saaf water hardware collects data, displays water quality and estimates or sends data to IBM Watson IoT Platform via MQTT Protocol. 
 To do so it comprises of 5 units namely:
@@ -20,19 +20,21 @@ To do so it comprises of 5 units namely:
     - 2G Cellular if TTGO T-Call ESP32 Dev Board 
     - OR WiFi 2.4 GHz if ESP32 Dev Board
 
+![Hardware Structure](./images/struct.png)
+
 ### Getting started with Saaf water Hardware
 
 There are 3 hardware codes:
-1. [Hardware Node](https://github.com/saaf-water/Saaf-water-Hardware/tree/main/hardwareNode): This is the Arduino code for the cellular device
-2. [Testing Hardware Node](https://github.com/saaf-water/Saaf-water-Hardware/tree/main/testNode): This is the Arduino code for WiFi enabled device and testing
-3. [Simulator](https://github.com/saaf-water/Saaf-water-Hardware/tree/main/simulator): This file can be imported in the IBM Watson IoT Platform to use the simulator
+1. [Hardware Node](./hardwareNode): This is the Arduino code for the cellular device
+2. [Testing Hardware Node](./testNode): This is the Arduino code for WiFi enabled device and testing
+3. [Simulator](./simulator): This file can be imported in the IBM Watson IoT Platform to use the simulator
 
 #### Procedure 
 
 Note: Setup your hardware and configure IBM IoT Platform ([Click here for guide](https://binnes.github.io/esp8266Workshop/))
 1. Install [Arduino IDE](https://www.arduino.cc/en/software)
 2. [Configure ESP32 prerequisites in Arduino IDE](https://randomnerdtutorials.com/installing-the-esp32-board-in-arduino-ide-windows-instructions/)
-3. Copy all libraries from the [library folder]() to your local Arduino IDE's library folder
+3. Copy all libraries from the [library folder](./libraries) to your local Arduino IDE's library folder
 4. Select hardware code and change the configuration information according to your setup 
 5. Upload!
 
