@@ -1,5 +1,7 @@
 # Saaf-water-Hardware
 
+### Getting started with Saaf water Hardware
+
 ### How to Contribute
 
 Thank you for your interest in contributing to Saaf water! Before you begin writing code, it is important that you share your intention to contribute with the team, based on the type of contribution:
