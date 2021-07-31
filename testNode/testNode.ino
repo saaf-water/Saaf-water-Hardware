@@ -1,4 +1,4 @@
-#include <ESP8266WiFi.h>
+#include <WiFi.h>
 #include <ArduinoJson.h>
 #include <PubSubClient.h>
 #include <Adafruit_NeoPixel.h>
@@ -186,7 +186,7 @@ void processBegin(){
 
   printData(tdsAvg, turbAvg, phAvg, ecAvg, tempAvg);
 
-  if((WiFi.status() != WL_CONNECTED){
+  if(!mqtt.connect(MQTT_DEVICEID, MQTT_USER, MQTT_TOKEN)){
     assessData(tdsAvg, turbAvg, phAvg, ecAvg, tempAvg);
     ringDisplay();
   }
