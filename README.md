@@ -22,6 +22,16 @@ To do so it comprises of 5 units namely:
     - 2G Cellular if TTGO T-Call ESP32 Dev Board 
     - OR WiFi 2.4 GHz if ESP32 Dev Board
 
+### Repo Content
+
+There are 3 hardware related codes:
+1. [Hardware Node](https://github.com/saaf-water/Saaf-water-Hardware/tree/main/hardwareNode): This is the Arduino code for the cellular device
+2. [Testing Hardware Node](https://github.com/saaf-water/Saaf-water-Hardware/tree/main/testNode): This is the Arduino code for WiFi enabled device and testing
+3. [Simulator](https://github.com/saaf-water/Saaf-water-Hardware/tree/main/simulator): This file can be imported in the IBM Watson IoT Platform to use the simulator
+
+Note: Change the configuration information according to your setup, before using or testing.
+
+
 ### How to Contribute
 
 Thank you for your interest in contributing to Saaf water! Before you begin writing code, it is important that you share your intention to contribute with the team, based on the type of contribution:
