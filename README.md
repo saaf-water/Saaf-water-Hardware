@@ -2,6 +2,26 @@
 
 ### Getting started with Saaf water Hardware
 
+Saaf water hardware collects data, displays water quality and estimates or sends data to IBM Watson IoT Platform via MQTT Protocol. 
+To do so it comprises of 5 units namely:
+- Power Unit 
+    - 1000 mAh LiPo Battery
+    - 5V 1A DC Power Adapter or equivalent Solar Panel
+- Microcontroller Unit (MCU) 
+    - [TTGO T-Call ESP32 Dev Board](http://www.lilygo.cn/prod_view.aspx?TypeId=50033&Id=1127&FId=t3:50033:3)
+    - OR [ESP32 Dev Module](https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32e_esp32-wroom-32ue_datasheet_en.pdf)
+- Sensing Unit
+    - [TDS Senor](https://wiki.seeedstudio.com/Grove-TDS-Sensor/)
+    - [Turbidity Sensor](https://wiki.dfrobot.com/Turbidity_sensor_SKU__SEN0189)
+    - [pH Sensor](https://wiki.seeedstudio.com/Grove-PH_Sensor/)
+    - [Electrical Conductivity Sensor](https://wiki.dfrobot.com/Gravity_Analog_Electrical_Conductivity_Sensor_Meter_K=10_SKU_DFR0300-H)
+    - [Waterproof Temperature Sensor DS18B20](https://datasheets.maximintegrated.com/en/ds/DS18B20.pdf)
+- Visual Indicator
+    - [Adafruit Neopixel 16 LED Ring](https://www.adafruit.com/product/1463)
+- Telemetry
+    - 2G Cellular if TTGO T-Call ESP32 Dev Board 
+    - OR WiFi 2.4 GHz if ESP32 Dev Board
+
 ### How to Contribute
 
 Thank you for your interest in contributing to Saaf water! Before you begin writing code, it is important that you share your intention to contribute with the team, based on the type of contribution:
