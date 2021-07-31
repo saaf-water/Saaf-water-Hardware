@@ -15,29 +15,29 @@
 // --------------------------------------------------------------------------------------------
 
 // IBM Watson IoT connection details
-#define MQTT_HOST "2h1qnj.messaging.internetofthings.ibmcloud.com"
+#define MQTT_HOST "XXXXX.messaging.internetofthings.ibmcloud.com" // Change XXXXXX -> Your Organisation ID
 #define MQTT_PORT 1883
-#define MQTT_DEVICEID "d:2h1qnj:Saaf-water-Node:20210716"
+#define MQTT_DEVICEID "d:XXXXXX:YYYYYY:ZZZZZZ" // Change XXXXXX -> Your Organisation ID, YYYYYY -> Device Type, ZZZZZZ -> Device ID
 #define MQTT_USER "use-token-auth"
-#define MQTT_TOKEN "node20210716"
+#define MQTT_TOKEN "AAAAAAAAA" // Change AAAAAA -> Your Authentication Token
 #define MQTT_TOPIC "iot-2/evt/status/fmt/json"
 #define MQTT_TOPIC_DISPLAY "iot-2/cmd/display/fmt/json"
 
 // Add GPIO pins used to connect devices
-#define TDS_PIN 
-#define TURB_PIN
-#define PH_PIN
-#define EC_PIN
-#define TEMP_PIN  
-#define RGB_PIN D5
+#define TDS_PIN 35
+#define TURB_PIN 32
+#define PH_PIN 33
+#define EC_PIN 27
+#define TEMP_PIN 4
+#define RGB_PIN 5
 
 #define LED_NUM 16
 
 #define Vref 3.33
 #define Ares 4096
 // Add WiFi connection information
-char ssid[] = "SOHAIL";     //  your network SSID (name) 
-char pass[] = "Lenovo@\\\\";  // your network password
+char ssid[] = "xxxxxxxx";     //  your network SSID (name) 
+char pass[] = "xxxxxxxx";  // your network password
 
 // --------------------------------------------------------------------------------------------
 //        SHOULD NOT NEED TO CHANGE ANYTHING BELOW THIS LINE
