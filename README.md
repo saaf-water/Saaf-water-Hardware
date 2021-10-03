@@ -60,7 +60,7 @@ The project reviewers at this time are :
 
 - [Hrishikesh Bhandari](https://github.com/Hrishikesh24) (Maintainer)
 - [Satyam Prakash](https://github.com/satyamprakash-iot)
-- [Sanket Marathe]
+
 ## License
 
 Saaf water Dashboard is licensed under the Apache Software License, Version 2.
