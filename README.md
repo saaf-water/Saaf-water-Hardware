@@ -7,8 +7,7 @@
 Saaf water hardware collects data, displays water quality and estimates or sends data to IBM Watson IoT Platform via MQTT Protocol. 
 To do so it comprises of 5 units namely:
 - Power Unit 
-    - 1000 mAh LiPo Battery
-    - 5V 3A DC Power Adapter or equivalent Solar Panel
+    - 5V 3A DC Power Adapter or equivalent Solar Panel with the appropriate battery and it's charge & protection circuit
 - Microcontroller Unit (MCU) 
     - [ESP32 Dev Module](https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32e_esp32-wroom-32ue_datasheet_en.pdf)
     - [ADS1115 External ADC](https://www.adafruit.com/product/1085)
