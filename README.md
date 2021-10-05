@@ -4,7 +4,7 @@ Saaf water hardware collects data, displays water quality and estimates or sends
 To do so it comprises of 5 units namely:
 - Power Unit 
     - 1000 mAh LiPo Battery
-    - 5V 1A DC Power Adapter or equivalent Solar Panel
+    - 5V 3A DC Power Adapter or equivalent Solar Panel
 - Microcontroller Unit (MCU) 
     - [TTGO T-Call ESP32 Dev Board](http://www.lilygo.cn/prod_view.aspx?TypeId=50033&Id=1127&FId=t3:50033:3)
     - OR [ESP32 Dev Module](https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32e_esp32-wroom-32ue_datasheet_en.pdf)
