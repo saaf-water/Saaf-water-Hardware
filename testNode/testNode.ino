@@ -5,16 +5,15 @@
 #include "DallasTemperature.h"
 #include "EEPROM.h"
 
-#include <SPI.h>
 #include <WiFi.h>
 #include <ArduinoJson.h>
 #include <PubSubClient.h>
 #include <Adafruit_NeoPixel.h>
-#define TINY_GSM_MODEM_SIM800
-#include <TinyGsmClient.h>
 #ifdef __AVR__
   #include <avr/power.h>
 #endif
+
+
 
 
 // --------------------------------------------------------------------------------------------
@@ -31,17 +30,19 @@
 #define MQTT_TOPIC_DISPLAY "iot-2/cmd/display/fmt/json"
 
 // Add WiFi connection information
-char ssid[] = "------";     //  your network SSID (name) 
-char pass[] = "------";  // your network password
+char ssid[] = "REPLACE_WITH_YOUR_WIFI-SSID"; 
+char pass[] = "REPLACE_WITH_YOUR_PASSWORD";  
 
-#define LED_NUM 16
 // --------------------------------------------------------------------------------------------
 //        SHOULD NOT NEED TO CHANGE ANYTHING BELOW THIS LINE
 // --------------------------------------------------------------------------------------------
-WiFiClient wifiClient;
 
+#define SerialMon Serial
+#define SerialAT Serial1
+
+WiFiClient client;
 void callback(char* topic, byte* payload, unsigned int length);
-PubSubClient mqtt(MQTT_HOST, MQTT_PORT, callback, wifiClient);
+PubSubClient mqtt(MQTT_HOST, MQTT_PORT, callback, client);
 
 #define LED_NUM 16
 #define RGB_PIN 19
@@ -107,21 +108,11 @@ void setup(void){
     Serial.println("Failed to initialize ADS.");
     while (1);
   }
-  // Start WiFi connection
-  WiFi.mode(WIFI_STA);
-  WiFi.begin(ssid, pass);
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.print(".");
-  }
-  Serial.println("");
-  Serial.println("WiFi Connected");
 
-  // Start connected devices
-  dht.begin();
-//  pixel.begin();
 
-  // Connect to MQTT - IBM Watson IoT Platform
+  setup_wifi();
+
+   // Connect to MQTT - IBM Watson IoT Platform
   if (mqtt.connect(MQTT_DEVICEID, MQTT_USER, MQTT_TOKEN)) {
     Serial.println("MQTT Connected");
     mqtt.subscribe(MQTT_TOPIC_DISPLAY);
@@ -159,11 +150,13 @@ void loop(void){
   }
 
   // Pause - but keep polling MQTT for incoming messages
-  for (int i = 0; i < 7200; i++) {
+  for (int i = 0; i < 100; i++) {
     mqtt.loop();
     delay(1000);
   }
 }
+
+
 int getMedianNum(int bArray[], int iFilterLen) 
 {
       int bTab[iFilterLen];
@@ -423,6 +416,27 @@ void ringDisplay(){
       colorWipe(strip.Color(0, 0, 0), 50);
       strip.show();
   }
+}
+
+
+void setup_wifi() {
+  delay(10);
+  // We start by connecting to a WiFi network
+  Serial.println();
+  Serial.print("Connecting to ");
+  Serial.println(ssid);
+
+  WiFi.begin(ssid, password);
+
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+
+  Serial.println("");
+  Serial.println("WiFi connected");
+  Serial.println("IP address: ");
+  Serial.println(WiFi.localIP());
 }
 
 void colorWipe(uint32_t c, uint8_t wait) {
